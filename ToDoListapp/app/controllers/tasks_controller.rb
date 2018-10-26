@@ -21,10 +21,6 @@ class TasksController < ApplicationController
   def edit
   end
 
-  def change_status
-    
-  end
-
   # POST /tasks
   # POST /tasks.json
   def create

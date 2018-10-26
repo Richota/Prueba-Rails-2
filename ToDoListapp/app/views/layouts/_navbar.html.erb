@@ -1,7 +1,7 @@
 <!-- Navigation -->
 
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase">
-  <a class="navbar-brand" href="#">ToDo List APP</a>
+  <%= link_to 'ToDo List APP', root_path, class: "navbar-brand" %>
   <% if user_signed_in? %>
   <u>
     <li>Bienvenido <%= current_user.name %></li>

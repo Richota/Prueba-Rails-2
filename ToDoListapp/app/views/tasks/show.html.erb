@@ -1,19 +1,9 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @task.name %>
-</p>
+  <strong><h1><%= @task.name %></h1></strong>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @task.photo %>
-</p>
+  <img class="img-responsive img-rounded" src= '<%= asset_path "#{@task.photo}"%> '>
+<br>
 
-<p>
-  <strong>State:</strong>
-  <%= @task.state %>
-</p>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
+
 <%= link_to 'Back', tasks_path %>
