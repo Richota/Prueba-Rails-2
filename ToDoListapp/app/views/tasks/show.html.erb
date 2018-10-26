@@ -1,9 +1,13 @@
 
   <strong><h1><%= @task.name %></h1></strong>
 
-  <img class="img-responsive img-rounded" src= '<%= asset_path "#{@task.photo}"%> '>
+  <div class="card col-md-4">
+    <%= image_tag @task.photo %>
+  </div>
 <br>
+<table>
 
+</table>
 
 
 <%= link_to 'Back', tasks_path %>

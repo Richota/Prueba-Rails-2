@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :tasks, only: [:index, :show]
+  resources :tasks, only: [:index, :show] do
+    resources :tasks_users, only: [:create]
+  end
   root to: "tasks#index"
-  resources :tasks_users, only: [:update]
+
 
   devise_for :users, controllers: {
        registrations: 'users/registrations'

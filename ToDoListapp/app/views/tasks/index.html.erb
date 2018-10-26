@@ -5,20 +5,19 @@
 <br>
 
 <div class="row">
-  <% @tasks.each do |task| %>
-    <div class="col-sm-12 col-md-4">
-      <div class="card text-white bg-primary">
-      <h3><%= task.name %></h3>
+    <% @tasks.each do |task| %>
+        <div class="card text-white bg-primary col-sm-12 col-md-4">
+        <h3><%= task.name %></h3>
 
-        <div class="thumbnail">
-          <img class="img-responsive img-rounded" src= '<%= asset_path "#{task.photo}"%> '>
-          <small><%= time_ago_in_words(task.created_at) %> ago</small>
-          <br>
-          <p><%= link_to 'Detalle', task, class: "btn btn-primary" %> </p>
-          <%= link_to 'Completar', tasks_user_path(current_user.id), class: "btn btn-success" %>
+          <div class="thumbnail">
+            <%= image_tag task.photo, class: "img-responsive" %>
+            <small><%= time_ago_in_words(task.created_at) %> ago</small>
+            <br>
+            <p><%= link_to 'Detalle', task, class: "btn btn-primary" %> </p>
+
+            <%= link_to 'Completar', task_tasks_users_path(task), class: "btn btn-success", method: :post %>
+          </div>
         </div>
-      </div>
-      <br>
-    </div>
-  <% end %>
+        <br>
+    <% end %>
 </div>

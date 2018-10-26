@@ -8,6 +8,7 @@
 
 Task.destroy_all
 User.destroy_all
+TasksUser.destroy_all
 
   Task.create(name: "Comer Empanadas", photo: "empanadas.jpg")
   Task.create(name: "Bailar Cueca", photo: "cueca.jpg")
