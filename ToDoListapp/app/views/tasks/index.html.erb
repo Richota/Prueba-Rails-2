@@ -6,17 +6,19 @@
 
 <div class="row">
   <% @tasks.each do |task| %>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="caption">
-          <h3><%= task.name %></h3>
-          <small><%= time_ago_in_words(task.created_at) %> ago</small>
-        <br>
-          <img src= '<%= asset_path "#{task.photo}"%> '>
-          <p><%= link_to 'Show', task, class: "btn btn-primary" %> </p>
-        </div>
+    <div class="col-sm-12 col-md-4">
+      <div class="card text-white bg-primary">
 
+      <h3><%= task.name %></h3>
+      <small><%= time_ago_in_words(task.created_at) %> ago</small>
+      <br>
+        <div class="thumbnail">
+          <img class="img-responsive img-rounded" src= '<%= asset_path "#{task.photo}"%> '>
+          <p><%= link_to 'Show', task, class: "btn btn-primary" %> </p>
+          <button type="button" class="btn btn-success">Completar</button>
+        </div>
       </div>
+      <br>
     </div>
   <% end %>
 </div>
